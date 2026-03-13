@@ -287,6 +287,10 @@ article p,
 }
 
 .wrapper img {
+    width: 100%;
+    height: 200px;      /* fixed height */
+    object-fit: cover;  /* crop instead of stretching */
+
     border-radius: 1rem;
 }
 
