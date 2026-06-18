@@ -1,25 +1,11 @@
-// Click events for buttons
-const portfolio = document.getElementById("portfolio");
-const portfolioBtn = document.getElementById("portfolio-btn");
-const skills = document.getElementById("skills");
-const skillsBtn = document.getElementById("skills-btn");
-
-portfolioBtn.addEventListener("click", (event) => {
-  skills.style.display = "none";
-  portfolio.style.display = "flex";
-  skillsBtn.classList.remove("active-btn");
-  portfolioBtn.classList.add("active-btn");
-});
-
-skillsBtn.addEventListener("click", (event) => {
-  skills.style.display = "flex";
-  portfolio.style.display = "none";
-  portfolioBtn.classList.remove("active-btn");
-  skillsBtn.classList.add("active-btn");
-});
-
-// Light & Dark Theme
 document.addEventListener("DOMContentLoaded", () => {
+  const sections = {
+    experience: document.getElementById("experience"),
+    portfolio: document.getElementById("portfolio"),
+    skills: document.getElementById("skills"),
+  };
+  const sectionButtons = document.querySelectorAll("[data-section]");
+  const projectButtons = document.querySelectorAll("[data-project-group]");
   const toggleThemeButton = document.getElementById("toggleTheme");
   const themeIcon = document.querySelector('img[alt="theme icon"]');
   const githubLogo = document.querySelector('img[alt="github logo"]');
@@ -40,6 +26,29 @@ document.addEventListener("DOMContentLoaded", () => {
     theme: "assets/theme_dark.png",
   };
 
+  function setSection(sectionKey) {
+    Object.entries(sections).forEach(([key, section]) => {
+      section.classList.toggle("active-section", key === sectionKey);
+    });
+
+    sectionButtons.forEach((button) => {
+      const isActive = button.dataset.section === sectionKey;
+      button.classList.toggle("active-btn", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  function setProjectGroup(groupKey) {
+    projectButtons.forEach((button) => {
+      const currentGroup = document.getElementById(button.dataset.projectGroup);
+      const isActive = button.dataset.projectGroup === groupKey;
+
+      currentGroup.classList.toggle("active-group", isActive);
+      button.classList.toggle("active-btn", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
   function setTheme(isDark) {
     githubLogo.src = isDark ? darkLogos.github : lightLogos.github;
     linkedinLogo.src = isDark ? darkLogos.linkedin : lightLogos.linkedin;
@@ -47,20 +56,31 @@ document.addEventListener("DOMContentLoaded", () => {
     themeIcon.src = isDark ? darkLogos.theme : lightLogos.theme;
   }
 
+  sectionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setSection(button.dataset.section);
+    });
+  });
+
+  projectButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setProjectGroup(button.dataset.projectGroup);
+    });
+  });
+
   toggleThemeButton.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-theme");
     localStorage.setItem("isDark", isDark);
-
     setTheme(isDark);
   });
 
   const loadTheme = () => {
     const isDark = localStorage.getItem("isDark") === "true";
     document.body.classList.toggle("dark-theme", isDark);
-
     setTheme(isDark);
   };
 
-  // Load saved theme from local storage or default to light theme
+  setSection("experience");
+  setProjectGroup("personal-projects");
   loadTheme();
 });

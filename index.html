@@ -8,129 +8,294 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer> </script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <section class="hero">
-        <img 
-        id="toggleTheme" 
-        class="theme-btn" 
-        src="assets/theme_light.png" 
-        alt="theme icon" 
-        />
+        <img
+            id="toggleTheme"
+            class="theme-btn"
+            src="assets/theme_light.png"
+            alt="theme icon"
+        >
         <div class="hero-pic">
             <div class="inner-circle"></div>
-            <img 
-            src="assets/me.jpg" 
-            alt="Taheer Khan" 
-            />
+            <img
+                src="assets/me.jpg"
+                alt="Taheer Khan"
+            >
         </div>
         <div class="hero-info">
             <h1>Taheer Khan</h1>
-            <h2>Computer Engineer</h2>
+            <h2>Computer Engineer (Almost)</h2>
             <div class="logo-container">
                 <a href="https://github.com/taheer6" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/github_light.png" alt="github logo" />
+                    <img src="assets/github_light.png" alt="github logo">
                 </a>
                 <a href="https://www.linkedin.com/in/khan-taheer/" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/linkedin_light.png" alt="linkedin logo" />
+                    <img src="assets/linkedin_light.png" alt="linkedin logo">
                 </a>
                 <a href="mailto:taheer.khan@torontomu.ca" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/email_light.png" alt="email logo" />
+                    <img src="assets/email_light.png" alt="email logo">
                 </a>
             </div>
         </div>
     </section>
+
     <section class="cta">
-        <a href="assets/TaheerKhan_ResumeC.pdf" target="_blank">
-            <button class="btn download-btn">
-                Download Resume
-            </button>
+        <a href="assets/TaheerKhan_ResumeC.pdf" target="_blank" rel="noopener noreferrer">
+            <button class="btn download-btn">View Resume</button>
         </a>
         <a href="mailto:taheer.khan@torontomu.ca">
-            <button class="btn contact-btn">
-                Contact Me
-            </button>
+            <button class="btn contact-btn">Contact Me</button>
         </a>
     </section>
+
     <section class="about-me">
         <h2><b>About Me</b></h2>
         <p>
-            3rd year computer engineer @ Toronto Metropolitan University <br>Current Hobbies: Basketball & Chess
+            3rd year computer engineer @ Toronto Metropolitan University <br> <br>
+            If I'm not doomscrolling, I'm working on Baja OR possibly at the gym <br>
+            Check out my resume or click on my projects for a better look at my work
         </p>
     </section>
-    
+
     <section class="portfolio-skills">
         <div class="btn-bg">
-            <button class="btn-2 active-btn" id="portfolio-btn">
+            <button class="btn-2 active-btn" id="experience-btn" data-section="experience" aria-pressed="true">
+                Experience
+            </button>
+            <button class="btn-2" id="portfolio-btn" data-section="portfolio" aria-pressed="false">
                 Projects
             </button>
-            <button class="btn-2" id="skills-btn">
+            <button class="btn-2" id="skills-btn" data-section="skills" aria-pressed="false">
                 Skills
             </button>
         </div>
     </section>
-    <section class="portfolio" id="portfolio">
-        <div class="wrapper project-wrapper">
-            <a href="https://github.com/taheer6/embedded-media-console" class="project" target="_blank" rel="noopener noreferrer">
-                <img src="assets/embedded_image.png" alt="Embedded Media Console" class="project-image">
-                <div class="project-info">
-                    <h3><a>Embedded Media Console</a></h3>
-                    <p><a>Includes a photo library, mp3 player, and Google Dino game. Built on ARM Cortex M3</a></p>
+
+    <section class="experience content-section active-section" id="experience">
+        <div class="experience-timeline">
+            <div class="experience-entry">
+                <div class="experience-side experience-side-left">
+                    <p class="experience-dates">Sep 2024 - Present</p>
+                    <p class="experience-location">Toronto, ON</p>
                 </div>
-            </a>
-        </div>
-        <div class="wrapper project-wrapper">
-            <a href="https://github.com/taheer6/Simple-CPU" class="project" target="_blank" rel="noopener noreferrer">
-                <img src="assets/cpudesign.png" alt="Project 1" class="project-image">
-                <div class="project-info">
-                    <h3><a>Simple 8-bit CPU</a></h3>
-                    <p><a>Designed a functioning CPU using VHDL and tested using an FPGA</a></p>
+                <div class="experience-marker"></div>
+                <div class="experience-side experience-side-right">
+                    <h3>Electrical Co-Lead</h3>
+                    <p class="experience-summary">TMU Baja Racing SAE</p>
+                    <img src="assets/tmbr.png" alt="Example design team visual" class="experience-visual">
                 </div>
-            </a>
-        </div>
-        <div class="wrapper project-wrapper">
-            <a href="https://github.com/taheer6/CMOS-Circuit-Design" class="project" target="_blank" rel="noopener noreferrer">
-            <img src="assets/cmos_image.png" alt="CMOS Digital Circuit Design" class="project-image">
-                <div class="project-info">
-                    <h3><a>CMOS Digital Circuit Design</a></h3>
-                    <p><a>Designed an inverter, NAND, NOR in Cadence</a></p>
+            </div>
+
+            <div class="experience-entry">
+                <div class="experience-side experience-side-left">
+                    <p class="experience-dates">Jan 2026 - Apr 2026</p>
+                    <p class="experience-location">Remote</p>
                 </div>
-            </a>
-        </div>
-        <div class="wrapper project-wrapper">
-            <a href="https://github.com/taheer6/motion-sensor" class="project" target="_blank" rel="noopener noreferrer">
-                <img src="assets/sensor_image.png" alt="Project 3" class="project-image">
-                <div class="project-info">
-                    <h3><a>Realtime Motion Sensor</a></h3>
-                    <p><a>Using an ultrasonic sensor to detect motion and trigger a notification through Firebase</a></p>
+                <div class="experience-marker"></div>
+                <div class="experience-side experience-side-right">
+                    <h3>Software Developer Intern</h3>
+                    <p class="experience-summary">EventSystemPro</p>
                 </div>
-            </a>
-        </div>
-        <div class="wrapper project-wrapper">
-            <a href="assets/Design-Project.pdf" class="project" target="_blank" rel="noopener noreferrer">
-                <img src="assets/bjt_amplifier-design.png" alt="Project 4" class="project-image">
-                <div class="project-info">
-                    <h3><a>Cascaded BJT Amplifier</a></h3>
-                    <p><a>Designed a cascaded Common-Emitter and Common-Collector BJT in MultiSim</a></p>
+            </div>
+
+            <div class="experience-entry experience-entry-education">
+                <div class="experience-side experience-side-left">
+                    <h3>Bachelors Computer Engineering</h3>
+                    <p class="experience-summary">Toronto Metropolitan University</p>
+                    <img src="assets/school2.png" alt="Example education visual" class="experience-visual">
                 </div>
-            </a>
-        </div>
-        <div class="wrapper project-wrapper">
-            <a href="https://github.com/taheer6/Banking-Application" class="project" target="_blank" rel="noopener noreferrer">
-                <img src="assets/banking_image.png" alt="Project 5" class="project-image">
-                <div class="project-info">
-                    <h3><a>Banking Application</a></h3>
-                    <p><a>A secure banking app with Java, featuring transactions and a responsive interface.</a></p>
+                <div class="experience-marker"></div>
+                <div class="experience-side experience-side-right">
+                    <p class="experience-dates">2022 - Current</p>
+                    <p class="experience-location">Toronto, ON</p>
                 </div>
-            </a>
+            </div>
         </div>
     </section>
-    <section class="skills" id="skills">
+
+    <section class="portfolio content-section" id="portfolio">
+        <div class="project-categories">
+            <div class="btn-bg btn-bg-sm">
+                <button class="sub-btn active-btn" id="personal-projects-btn" data-project-group="personal-projects" aria-pressed="true">
+                    Personal
+                </button>
+                <button class="sub-btn" id="school-projects-btn" data-project-group="school-projects" aria-pressed="false">
+                    School
+                </button>
+            </div>
+        </div>
+
+        <div class="project-group active-group" id="personal-projects">
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/Fitness-Watch" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/watch.png" alt="Fitness Watch" class="project-image">
+                    <div class="project-info">
+                        <h3>Fitness Watch</h3>
+                        <p>Heartrate, steps, distance, compass, and TIME.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/Binary-Keyboard" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/kb.png" alt="Binary Keyboard" class="project-image">
+                    <div class="project-info">
+                        <h3>Binary Keyboard</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/motion-sensor" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/sensor_image.png" alt="Realtime Motion Sensor" class="project-image">
+                    <div class="project-info">
+                        <h3>Realtime Motion Sensor</h3>
+                        <p>Ultrasonic sensor to send a notification when motion is detected.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/posture-correction" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/posture.png" alt="Posture Correction Application" class="project-image">
+                    <div class="project-info">
+                        <h3>Posture Correction Application</h3>
+                        <p>Make sure posture is straight while sitting & working.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/spotify-widget" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/spotify.png" alt="Spotify Widget" class="project-image">
+                    <div class="project-info">
+                        <h3>Spotify Widget</h3>
+                        <p>Transluscent widget for Spotify.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/minesweeper-v1.01" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/mine.png" alt="Minesweeper" class="project-image">
+                    <div class="project-info">
+                        <h3>Minesweeper</h3>
+                        <p>Simple python minesweeper.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/Turtle-racer" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/turtle.png" alt="Turtle Racer" class="project-image">
+                    <div class="project-info">
+                        <h3>Turtle Racer</h3>
+                        <p>Colourful turtles racing in python!</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="project-group" id="school-projects">
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/embedded-media-console" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/embedded_image.png" alt="Embedded Media Console" class="project-image">
+                    <div class="project-info">
+                        <h3>Embedded Media Console</h3>
+                        <p>Includes a photo library, MP3 player, and Google Dino game built on ARM Cortex M3.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/CMOS-Circuit-Design" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/cmos_image.png" alt="CMOS Digital Circuit Design" class="project-image">
+                    <div class="project-info">
+                        <h3>CMOS Digital Circuit Design</h3>
+                        <p>Designed inverter, NAND, and NOR circuits in Cadence.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/Simple-CPU" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/cpudesign.png" alt="Simple 8-bit CPU" class="project-image">
+                    <div class="project-info">
+                        <h3>Simple 8-bit CPU</h3>
+                        <p>Designed a functioning CPU in VHDL and tested it on an FPGA.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/NOC-Simulation" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/NOC.png" alt="Network On Chip Simulator" class="project-image">
+                    <div class="project-info">
+                        <h3>Network On Chip Simulator</h3>
+                        <p>Modeled and simulated a Network-on-Chip architecture using SystemC.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="assets/Design-Project.pdf" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/bjt_amplifier-design.png" alt="Cascaded BJT Amplifier" class="project-image">
+                    <div class="project-info">
+                        <h3>Cascaded BJT Amplifier</h3>
+                        <p>Designed a cascaded common-emitter and common-collector amplifier for high gain and low output impedance in MultiSim.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/NBA-Fantasy-Database" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/sql.png" alt="NBA Fantasy League Tracker" class="project-image">
+                    <div class="project-info">
+                        <h3>NBA Fantasy League Tracker</h3>
+                        <p>Built an ESPN fantasy basketball league tracker using SQLite.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/Banking-Application" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/banking_image.png" alt="Banking Application" class="project-image">
+                    <div class="project-info">
+                        <h3>Banking Application</h3>
+                        <p>A secure Java banking app featuring transactions and a responsive interface.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/Flight-Booking-Application" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/flight.png" alt="Flight Booking Application" class="project-image">
+                    <div class="project-info">
+                        <h3>Flight Booking Application</h3>
+                        <p>Applicatoin built for Object Oriented Programming Lab.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper project-wrapper">
+                <a href="https://github.com/taheer6/coe428Labs" class="project" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/dsq.png" alt="COE 428 Labs" class="project-image">
+                    <div class="project-info">
+                        <h3>COE 428 Labs</h3>
+                        <p>Some Lab work for Data Structures and Algorithms.</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="skills content-section" id="skills">
         <div class="wrapper">
-            <h3>
-                Programming & Hardware
-            </h3>
+            <h3>Programming &amp; Hardware</h3>
             <article class="frontend-skills">
                 <p>C</p>
                 <p>C++</p>
@@ -142,10 +307,9 @@
                 <p>Matlab</p>
             </article>
         </div>
+
         <div class="wrapper">
-            <h3>
-                Tools & Platforms
-            </h3>
+            <h3>Tools &amp; Platforms</h3>
             <article class="backend-skills">
                 <p>MultiSim</p>
                 <p>Quartus II</p>
@@ -156,9 +320,23 @@
                 <p>Oscilloscope</p>
             </article>
         </div>
+
+        <div class="skills-bottom-row">
+            <div class="wrapper about-me-wrapper">
+                <h3>My Interests</h3>
+                <article class="about-me-skills">
+                    <p>Boston Celtics</p>
+                    <p>Man City</p>
+                    <p>Lego</p>
+                    <p>Basketball</p>
+                    <p>Seahawks</p>
+                </article>
+            </div>
+        </div>
     </section>
+
     <footer>
-        <p>&copy Taheer Khan 2024</p>
+        <p>&copy; Taheer Khan 2024</p>
     </footer>
 </body>
 </html>
